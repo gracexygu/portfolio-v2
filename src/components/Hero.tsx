@@ -14,8 +14,8 @@ export function Hero() {
       {/* Klein Blue Orb */}
       <KleinOrb />
       
-      {/* Main Content - 右移 */}
-      <div className="flex-1 flex flex-col justify-center max-w-2xl ml-auto py-16 relative z-10">
+      {/* Main Content - 左移 */}
+      <div className="flex-1 flex flex-col justify-center max-w-2xl mr-auto py-16 relative z-10">
         <h1 className="font-serif font-normal leading-tight mb-16">
           <span className="text-7xl md:text-8xl lg:text-9xl text-klein">Hello,</span>
           <br /><br />

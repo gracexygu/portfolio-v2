@@ -9,7 +9,7 @@ export function KleinOrb() {
     <div className="absolute pointer-events-none z-0"
       style={{
         bottom: 'calc(75px + 10rem)',
-        right: 'calc(5% + 8ch)',
+        left: 'calc(5% + 8ch)',
         width: '500px',
         height: '500px',
       }}
