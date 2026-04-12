@@ -14,9 +14,9 @@ export function Contact() {
   const { ref, isVisible } = useScrollReveal()
 
   return (
-    <section 
-      id="contact" 
-      className="bg-[#0A0A0A] border-t border-border-l1 py-16 md:py-20 px-8 md:px-16"
+    <section
+      id="contact"
+      className="bg-[#0A0A0A] py-16 md:py-20 px-8 md:px-16"
     >
       <div
         ref={ref}
