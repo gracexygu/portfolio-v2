@@ -1,0 +1,7 @@
+export { Nav } from './Nav'
+export { Hero } from './Hero'
+export { About } from './About'
+export { Experience } from './Experience'
+export { Toolkit } from './Toolkit'
+export { Taste } from './Taste'
+export { Contact, Footer } from './Contact'
