@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-text font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Link underline animation */
+.link-underline {
+  @apply relative;
+}
+
+.link-underline::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-px bg-text transition-all duration-300;
+}
+
+.link-underline:hover::after {
+  @apply w-full;
+}
+
+/* Text hover effect - italic */
+.hover-italic {
+  @apply transition-all duration-300;
+}
+
+.hover-italic:hover {
+  font-style: italic;
+}
+
+/* Text hover effect - color change */
+.hover-muted {
+  @apply transition-colors duration-300;
+}
+
+.hover-muted:hover {
+  @apply text-text-secondary;
+}
+
+/* Reveal animation for scroll */
+.reveal {
+  @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
+}
+
+.reveal.visible {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-accent/20;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

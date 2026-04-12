@@ -29,6 +29,15 @@ export interface NavItem {
   label: string
 }
 
+export interface TasteItem {
+  id: string
+  title: string
+  story: string
+  location: string
+  date: string
+  image: string
+}
+
 // ==================== Navigation ====================
 
 export const navItems: NavItem[] = [
@@ -152,6 +161,75 @@ export const experiences: Experience[] = [
     title: '公共管理学士',
     organization: '兰州大学 管理学院',
     type: 'education',
+  },
+]
+
+// ==================== Taste Items (3D Flip Gallery) ====================
+
+export const tasteItems: TasteItem[] = [
+  {
+    id: 'taste-1',
+    title: 'Morning Light',
+    story: '清晨五点爬起来等日出，冻得发抖，但当第一缕光打在山尖的时候，一切都值了。',
+    location: 'Switzerland',
+    date: '2024.03',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=800&fit=crop',
+  },
+  {
+    id: 'taste-2',
+    title: 'Golden Hour',
+    story: '黄金时刻转瞬即逝，但相机记住了这一刻永恒的温暖。',
+    location: 'Norway',
+    date: '2024.06',
+    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop',
+  },
+  {
+    id: 'taste-3',
+    title: 'Forest Silence',
+    story: '森林里的寂静不是空无，而是充满了生命的呼吸声。',
+    location: 'Japan',
+    date: '2023.11',
+    image: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=600&h=600&fit=crop',
+  },
+  {
+    id: 'taste-4',
+    title: 'Misty Valley',
+    story: '雾气缭绕的山谷，像是大自然为我们留下的一幅水墨画。',
+    location: 'Iceland',
+    date: '2024.02',
+    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=500&fit=crop',
+  },
+  {
+    id: 'taste-5',
+    title: 'The Path',
+    story: '每一条小路都通向未知，而这正是旅行的意义。',
+    location: 'New Zealand',
+    date: '2023.09',
+    image: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&h=900&fit=crop',
+  },
+  {
+    id: 'taste-6',
+    title: 'Cascade',
+    story: '站在瀑布前，能感受到水雾扑面而来的清凉，还有大自然的力量。',
+    location: 'Costa Rica',
+    date: '2024.01',
+    image: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=700&h=700&fit=crop',
+  },
+  {
+    id: 'taste-7',
+    title: 'Mirror Lake',
+    story: '湖面如镜，倒映着天空和山峦，分不清哪里是天，哪里是地。',
+    location: 'Canada',
+    date: '2024.07',
+    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=900&h=600&fit=crop',
+  },
+  {
+    id: 'taste-8',
+    title: 'Green Valley',
+    story: '绿色是治愈的颜色，在这里，所有的疲惫都烟消云散。',
+    location: 'Ireland',
+    date: '2023.08',
+    image: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600&h=800&fit=crop',
   },
 ]
 

@@ -71,7 +71,7 @@ body {
 
 /* ==================== Project Card Hover ==================== */
 .project-card {
-  @apply border border-border-l2 p-8 transition-all duration-400;
+  @apply border border-border-l2 p-8 transition-all duration-[400ms];
 }
 
 .project-card:hover {
@@ -105,7 +105,7 @@ body {
 
 /* ==================== XHS Card ==================== */
 .xhs-card {
-  @apply flex items-center gap-8 p-8 border border-border-l2 max-w-md transition-all duration-400;
+  @apply flex items-center gap-8 p-8 border border-border-l2 max-w-md transition-all duration-[400ms];
 }
 
 .xhs-card:hover {

@@ -1,32 +1,31 @@
+/**
+ * Hero - 首屏组件
+ * 
+ * 特点：
+ * - 克莱因蓝模糊球背景
+ * - 简洁首屏，导航在下方独立目录区
+ */
+
+import { KleinOrb } from './KleinOrb'
+
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-8">
-      <div className="text-center max-w-2xl">
-        {/* Name */}
-        <h1 className="font-serif text-6xl md:text-7xl mb-8 tracking-tight">
-          Grace
+    <section className="min-h-screen flex flex-col px-8 md:px-16 py-10 relative">
+      {/* Klein Blue Orb */}
+      <KleinOrb />
+      
+      {/* Main Content - 右移 */}
+      <div className="flex-1 flex flex-col justify-center max-w-2xl ml-auto py-16 relative z-10">
+        <h1 className="font-serif font-normal leading-tight mb-16">
+          <span className="text-7xl md:text-8xl lg:text-9xl text-klein">Hello,</span>
+          <br /><br />
+          <span className="text-4xl md:text-5xl lg:text-6xl">I am Grace – exploring the intersection of strategy, product, and AI.</span>
         </h1>
-        
-        {/* Tagline */}
-        <p className="text-xl md:text-2xl text-text-secondary leading-relaxed mb-12">
-          explores the intersection of{' '}
-          <span className="hover-italic hover-muted cursor-default">strategy</span>,{' '}
-          <span className="hover-italic hover-muted cursor-default">product</span>, and{' '}
-          <span className="hover-italic hover-muted cursor-default">AI</span>
-        </p>
-        
-        {/* Divider */}
-        <div className="w-16 h-px bg-border mx-auto mb-8" />
-        
-        {/* Slogan */}
-        <p className="font-script text-2xl text-text-muted">
-          Finding myself in what I build.
-        </p>
       </div>
       
-      {/* Scroll indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-        <div className="w-px h-12 bg-border animate-pulse" />
+      {/* Scroll Indicator */}
+      <div className="absolute right-8 md:right-16 bottom-12 font-serif text-sm text-text-muted hidden lg:block">
+        scroll & explore
       </div>
     </section>
   )

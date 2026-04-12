@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==================== Base Styles ==================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-text font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ==================== Scroll Reveal ==================== */
+.reveal {
+  @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+}
+
+.reveal.visible {
+  @apply opacity-100 translate-y-0;
+}
+
+/* ==================== Link Underline Animation ==================== */
+.link-underline {
+  @apply relative;
+}
+
+.link-underline::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-px bg-klein transition-all duration-300;
+}
+
+.link-underline:hover::after {
+  @apply w-full;
+}
+
+/* ==================== Hero Bottom Nav Hover ==================== */
+.nav-bottom-item {
+  @apply relative transition-all duration-300;
+}
+
+.nav-bottom-item::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-klein transition-all duration-300;
+}
+
+.nav-bottom-item:hover::after {
+  @apply w-full;
+}
+
+.nav-bottom-item:hover {
+  background: rgba(0, 47, 167, 0.03);
+}
+
+/* ==================== Section Header with Blob ==================== */
+.section-header-with-blob {
+  @apply relative inline-flex items-center gap-5 mb-16;
+}
+
+.section-title-text {
+  @apply font-serif text-3xl font-normal uppercase relative z-10;
+  letter-spacing: 6px;
+}
+
+.section-title-num {
+  @apply font-mono text-sm text-text-muted;
+}
+
+/* ==================== Project Card Hover ==================== */
+.project-card {
+  @apply border border-border-l2 p-8 transition-all duration-400;
+}
+
+.project-card:hover {
+  @apply border-klein;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px -15px rgba(0, 47, 167, 0.15);
+}
+
+/* ==================== Skill Item Hover ==================== */
+.skill-item {
+  @apply flex items-center gap-4 py-3 px-4 -mx-4 rounded-lg transition-colors duration-300;
+}
+
+.skill-item:hover {
+  @apply bg-gray-100;
+}
+
+.skill-item:hover .skill-name {
+  @apply text-klein;
+}
+
+/* ==================== Timeline Item ==================== */
+.timeline-item {
+  @apply grid gap-12 py-9 border-b border-border-l3;
+  grid-template-columns: 180px 1fr;
+}
+
+.timeline-item:last-child {
+  @apply border-b-0;
+}
+
+/* ==================== XHS Card ==================== */
+.xhs-card {
+  @apply flex items-center gap-8 p-8 border border-border-l2 max-w-md transition-all duration-400;
+}
+
+.xhs-card:hover {
+  @apply border-klein;
+  box-shadow: 0 10px 40px -10px rgba(0, 47, 167, 0.15);
+}
+
+/* ==================== Contact Link Hover ==================== */
+.contact-link:hover {
+  @apply text-accent-warm;
+}
+
+/* ==================== Selection Color ==================== */
+::selection {
+  background: rgba(0, 47, 167, 0.15);
+}
+
+/* ==================== Reduced Motion ==================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .reveal {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* ==================== Responsive Typography ==================== */
+@media (max-width: 900px) {
+  .section-title-text {
+    letter-spacing: 4px;
+  }
+  
+  .timeline-item {
+    @apply grid-cols-1 gap-2;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-title-text {
+    letter-spacing: 3px;
+    @apply text-2xl;
+  }
+}

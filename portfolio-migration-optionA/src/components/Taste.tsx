@@ -1,82 +1,133 @@
 /**
- * Taste - 审美展示
+ * Taste Section - 3D Flip Gallery
  * 
- * 特点：
- * - Morphing Blob（大幅度旋转变形）作为标题背景
- * - 摄影作品 Gallery
- * - 小红书卡片入口
+ * 特性：
+ * - 点击翻转展示拍摄故事
+ * - Klein Blue 背面 + 香槟金 meta 信息
+ * - 3D 入场动画
+ * - 移动端触摸支持
  */
 
+import { useState } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
-import { SectionHeader } from './MorphingBlob'
-import { socialLinks } from '../data'
+import { MorphingBlob } from './MorphingBlob'
+import { tasteItems } from '../data'
 
-// Placeholder photos - 替换为真实摄影作品
-const photos = [
-  { id: 1, placeholder: true },
-  { id: 2, placeholder: true },
-  { id: 3, placeholder: true },
-  { id: 4, placeholder: true },
-  { id: 5, placeholder: true },
-  { id: 6, placeholder: true },
-]
+interface FlipCardProps {
+  item: typeof tasteItems[0]
+  index: number
+  isFlipped: boolean
+  onFlip: () => void
+}
+
+function FlipCard({ item, index, isFlipped, onFlip }: FlipCardProps) {
+  return (
+    <div
+      className="flip-card h-[320px] cursor-pointer"
+      style={{
+        perspective: '1000px',
+        animationDelay: `${index * 0.1}s`,
+      }}
+      onClick={onFlip}
+    >
+      <div
+        className={`flip-card-inner relative w-full h-full transition-transform duration-700 ease-out`}
+        style={{
+          transformStyle: 'preserve-3d',
+          transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+        }}
+      >
+        {/* 正面 - 图片 */}
+        <div
+          className="flip-front absolute w-full h-full rounded-xl overflow-hidden shadow-lg"
+          style={{ backfaceVisibility: 'hidden' }}
+        >
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-full object-cover"
+          />
+          {/* 悬浮提示 */}
+          <span className="absolute bottom-3 right-3 bg-klein text-white font-mono text-[10px] px-2 py-1 rounded opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hint-tag">
+            CLICK
+          </span>
+        </div>
+
+        {/* 背面 - 故事 */}
+        <div
+          className="flip-back absolute w-full h-full rounded-xl overflow-hidden flex flex-col justify-center p-6 bg-klein shadow-xl"
+          style={{
+            backfaceVisibility: 'hidden',
+            transform: 'rotateY(180deg)',
+          }}
+        >
+          {/* 关闭按钮 */}
+          <button
+            className="absolute top-3 right-3 w-7 h-7 bg-white/20 hover:bg-white/30 rounded-full text-white text-base flex items-center justify-center transition-all duration-300 hover:rotate-90"
+            onClick={(e) => {
+              e.stopPropagation()
+              onFlip()
+            }}
+          >
+            ×
+          </button>
+
+          <h3 className="font-serif text-xl text-white mb-3">
+            {item.title}
+          </h3>
+          <p className="text-sm text-white/80 leading-relaxed mb-4">
+            {item.story}
+          </p>
+          <span className="font-mono text-xs text-accent">
+            {item.location} · {item.date}
+          </span>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export function Taste() {
   const { ref, isVisible } = useScrollReveal()
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null)
+
+  const handleFlip = (index: number) => {
+    setFlippedIndex(flippedIndex === index ? null : index)
+  }
 
   return (
-    <section 
-      id="taste" 
-      className="border-t border-border-l1 py-28 md:py-36 px-8 md:px-16"
+    <section
+      id="taste"
+      ref={ref}
+      className={`py-24 px-8 md:px-16 bg-gradient-to-br from-gray-100 to-white transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+      style={{ perspective: '2000px' }}
     >
-      <div
-        ref={ref}
-        className={`max-w-5xl mx-auto reveal ${isVisible ? 'visible' : ''}`}
-      >
-        {/* Section Header with Blob */}
-        <SectionHeader num="03" title="TASTE" blobVariant="taste" />
-        
-        {/* Intro Text */}
-        <p className="text-lg leading-relaxed text-text-secondary max-w-xl mb-12">
-          Beyond work, I capture moments through photography and share thoughts on Xiaohongshu. 
-          Here's a glimpse into my aesthetic world.
-        </p>
-        
-        {/* Photo Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-          {photos.map((photo) => (
-            <div
-              key={photo.id}
-              className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-50 border border-dashed border-border-l2 flex items-center justify-center text-text-muted text-sm cursor-pointer hover:border-klein transition-colors"
-            >
-              Photo {photo.id}
-            </div>
-          ))}
+      {/* Section Header with Morphing Blob */}
+      <div className="flex items-center gap-6 mb-12">
+        <MorphingBlob variant="taste" />
+        <div>
+          <h2 className="font-serif text-sm tracking-[6px] text-text-secondary uppercase">
+            Taste
+          </h2>
+          <p className="text-sm text-text-secondary mt-1">
+            点击图片翻转，探索背后的故事
+          </p>
         </div>
-        
-        {/* Xiaohongshu Card */}
-        <a 
-          href={socialLinks.xhs}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="xhs-card no-underline"
-        >
-          {/* XHS Icon */}
-          <div className="w-16 h-16 bg-[#ff2442] rounded-xl flex items-center justify-center flex-shrink-0">
-            <span className="text-white font-bold text-sm">小红书</span>
-          </div>
-          
-          {/* Info */}
-          <div className="flex-1">
-            <h4 className="font-serif text-lg text-text mb-1">我的小红书</h4>
-            <p className="text-text-secondary text-sm mb-2">
-              生活记录、旅行摄影、读书笔记
-            </p>
-            <span className="text-klein text-sm inline-flex items-center gap-1">
-              查看主页 <span>↗</span>
-            </span>
-          </div>
-        </a>
+      </div>
+
+      {/* 3D Flip Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+        {tasteItems.map((item, index) => (
+          <FlipCard
+            key={item.id}
+            item={item}
+            index={index}
+            isFlipped={flippedIndex === index}
+            onFlip={() => handleFlip(index)}
+          />
+        ))}
       </div>
     </section>
   )

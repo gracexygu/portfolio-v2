@@ -11,7 +11,7 @@ import { Hero, About, Experience, Taste, Toolkit, Contact, Footer } from './comp
 import { navItems } from './data'
 
 function App() {
-  const [activeSection, setActiveSection] = useState('')
+  const [_activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +34,7 @@ function App() {
   }, [])
 
   // activeSection 可用于未来扩展（如浮动进度指示器）
-  console.log('Current section:', activeSection)
+  // _activeSection available for future use
 
   return (
     <div className="relative">
