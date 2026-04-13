@@ -38,13 +38,22 @@ export interface TasteItem {
   image: string
 }
 
+export interface XhsNote {
+  id: string
+  title: string
+  likes: string
+  thumbnail: string
+}
+
 // ==================== Navigation ====================
 
 export const navItems: NavItem[] = [
   { id: 'about', label: 'about' },
   { id: 'experience', label: 'experience' },
   { id: 'taste', label: 'taste' },
+  { id: 'xhs', label: 'xhs' },
   { id: 'toolkit', label: 'toolkit' },
+  { id: 'contact', label: 'contact' },
 ]
 
 // ==================== Skills ====================
@@ -230,6 +239,29 @@ export const tasteItems: TasteItem[] = [
     location: 'Ireland',
     date: '2023.08',
     image: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600&h=800&fit=crop',
+  },
+]
+
+// ==================== XHS Notes ====================
+
+export const xhsNotes: XhsNote[] = [
+  {
+    id: 'xhs-1',
+    title: '跨境广告投放策略：从 0 到月销百万的素材 SOP',
+    likes: '2.3k',
+    thumbnail: 'https://images.unsplash.com/photo-1553877522-4b46-4eec-8f9c-24dfc3e8a1f1?w=400&h=400&fit=crop',
+  },
+  {
+    id: 'xhs-2',
+    title: 'TikTok 印尼 Mall 运营：优惠券策略 A/B 实验复盘',
+    likes: '1.8k',
+    thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop',
+  },
+  {
+    id: 'xhs-3',
+    title: '从文科转产品：非技术背景如何用 AI 工具做 Side Project',
+    likes: '3.1k',
+    thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd36a33c1f?w=400&h=400&fit=crop',
   },
 ]
 

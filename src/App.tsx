@@ -7,7 +7,7 @@
  */
 
 import { useState, useEffect } from 'react'
-import { Hero, About, Experience, Taste, Toolkit, Contact, Footer } from './components'
+import { Hero, About, Experience, Taste, Xiaohongshu, Toolkit, Contact, Footer } from './components'
 import { navItems } from './data'
 
 function App() {
@@ -44,6 +44,7 @@ function App() {
         <About />
         <Experience />
         <Taste />
+        <Xiaohongshu />
         <Toolkit />
         <Contact />
       </main>

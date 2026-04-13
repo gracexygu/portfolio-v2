@@ -39,7 +39,7 @@ export default {
       },
       fontFamily: {
         script: ['Caveat', 'cursive'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        serif: ['Crimson Pro', 'Playfair Display', 'Georgia', 'serif'],
         sans: ['Inter', 'Noto Sans SC', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
@@ -57,6 +57,12 @@ export default {
         'nucleus-1': 'nucleus1 4s ease-in-out infinite',
         'nucleus-2': 'nucleus2 5s ease-in-out infinite',
         'nucleus-3': 'nucleus3 6s ease-in-out infinite',
+        // 旋转文字环相关动画
+        'ring-rotate': 'ringRotate 50s linear infinite',
+        'nav-breathe': 'navBreathe 4s ease-in-out infinite',
+        'orb-explode': 'orbExplode 1s ease-out forwards',
+        'ring-explode': 'ringExplode 1s ease-out forwards',
+        'title-explode': 'titleExplode 1s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
@@ -138,6 +144,71 @@ export default {
         nucleus3: {
           '0%, 100%': { transform: 'scale(1)', opacity: '0.5' },
           '50%': { transform: 'scale(1.2)', opacity: '0.7' },
+        },
+        // ========== 旋转文字环导航动画 ==========
+        // 旋转
+        ringRotate: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        // 导航呼吸泡
+        navBreathe: {
+          '0%, 100%': { 
+            transform: 'translate(-50%, -50%) scale(1)', 
+            opacity: '0.45',
+          },
+          '50%': { 
+            transform: 'translate(-50%, -50%) scale(1.7)', 
+            opacity: '0.65',
+          },
+        },
+        // 呼吸泡爆炸
+        orbExplode: {
+          '0%': { 
+            transform: 'translate(-50%, -50%) scale(1.7)', 
+            opacity: '0.65', 
+            filter: 'blur(50px)' 
+          },
+          '40%': { 
+            transform: 'translate(-50%, -50%) scale(10)', 
+            opacity: '0.12', 
+            filter: 'blur(70px)' 
+          },
+          '70%': { 
+            transform: 'translate(-50%, -50%) scale(22)', 
+            opacity: '0.06', 
+            filter: 'blur(110px)' 
+          },
+          '100%': { 
+            transform: 'translate(-50%, -50%) scale(40)', 
+            opacity: '0', 
+            filter: 'blur(160px)' 
+          },
+        },
+        // 文字环爆炸
+        ringExplode: {
+          '0%': { 
+            transform: 'rotate(var(--current-rotation, 0deg)) scale(1)', 
+            opacity: '1' 
+          },
+          '40%': { 
+            transform: 'rotate(var(--current-rotation, 0deg)) scale(1.6)', 
+            opacity: '0.7' 
+          },
+          '70%': { 
+            transform: 'rotate(var(--current-rotation, 0deg)) scale(2.8)', 
+            opacity: '0' 
+          },
+          '100%': { 
+            transform: 'rotate(var(--current-rotation, 0deg)) scale(4.5)', 
+            opacity: '0' 
+          },
+        },
+        // 标题爆炸
+        titleExplode: {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(6)', opacity: '0.7' },
+          '100%': { transform: 'scale(18)', opacity: '0', filter: 'blur(25px)' },
         },
       },
     },

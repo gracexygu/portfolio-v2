@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -203,4 +205,18 @@ body {
     letter-spacing: 3px;
     @apply text-2xl;
   }
+}
+
+/* ==================== Rotating Ring Nav ==================== */
+/* SVG fill 颜色类 */
+.fill-text-muted {
+  fill: rgba(26, 26, 26, 0.4);
+}
+
+.fill-klein {
+  fill: #002FA7;
+}
+
+.hover\:fill-klein:hover {
+  fill: #002FA7;
 }

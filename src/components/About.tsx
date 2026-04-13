@@ -9,7 +9,7 @@
 
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { SectionHeader } from './MorphingBlob'
-import { aboutContent } from '../data'
+
 
 export function About() {
   const { ref, isVisible } = useScrollReveal()
@@ -37,10 +37,7 @@ export function About() {
               curiosity about how systems work and how AI can make them better.
             </p>
             
-            {/* Quote - 金句衬线化，加大字间距 */}
-            <blockquote className="font-serif italic text-xl text-text my-10 pl-5 border-l-2 border-klein leading-relaxed tracking-wider">
-              "{aboutContent.quote}"
-            </blockquote>
+            {/* Quote removed - moved to bottom as slogan */}
             
             <p className="text-lg leading-relaxed text-text-secondary text-justify">
               From designing coupon strategies at TikTok Indonesia to crafting 
@@ -60,6 +57,13 @@ export function About() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Background Slogan */}
+      <div className="max-w-7xl mx-auto mt-20 md:mt-28 overflow-hidden">
+        <p className="font-serif text-5xl md:text-7xl lg:text-8xl text-klein/10 leading-none tracking-wider whitespace-nowrap">
+          Finding myself in what I build
+        </p>
       </div>
     </section>
   )
