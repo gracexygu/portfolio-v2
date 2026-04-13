@@ -50,7 +50,7 @@ export interface XhsNote {
 export const navItems: NavItem[] = [
   { id: 'about', label: 'about' },
   { id: 'experience', label: 'experience' },
-  { id: 'taste', label: 'taste' },
+  { id: 'taste', label: 'photography' },
   { id: 'xhs', label: 'xhs' },
   { id: 'toolkit', label: 'toolkit' },
   { id: 'contact', label: 'contact' },
@@ -60,46 +60,53 @@ export const navItems: NavItem[] = [
 
 export const skills: Skill[] = [
   {
-    id: 'prompt-engineering',
-    name: 'prompt-engineering',
-    description: 'Prompt 工程方法论',
-    tags: ['LLM', 'Prompt'],
-    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/prompt-engineering',
+    id: 'context-snapshot',
+    name: 'context-snapshot',
+    description: '对话上下文快照与迁移工具，方便跨平台恢复上下文',
+    tags: ['Context', 'Migration'],
+    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/skills/context-snapshot',
   },
   {
-    id: 'ai-workflow-automation',
-    name: 'ai-workflow-automation',
-    description: 'AI 自动化工作流',
-    tags: ['Automation', 'Agent'],
-    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/ai-workflow-automation',
-  },
-  {
-    id: 'model-evaluation',
-    name: 'model-evaluation',
-    description: '模型评估框架',
-    tags: ['Evaluation', 'LLM'],
-    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/model-evaluation',
-  },
-  {
-    id: 'rag-pipeline',
-    name: 'rag-pipeline',
-    description: 'RAG 检索增强生成',
-    tags: ['RAG', 'Search'],
-    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/rag-pipeline',
-  },
-  {
-    id: 'fine-tuning-recipes',
-    name: 'fine-tuning-recipes',
-    description: '微调实践指南',
-    tags: ['Fine-tuning', 'Training'],
-    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/fine-tuning-recipes',
+    id: 'hv-analysis',
+    name: 'hv-analysis',
+    description: '横纵分析法深度研究框架，输出 PDF 研究报告',
+    tags: ['Research', 'Analysis'],
+    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/skills/hv-analysis',
   },
   {
     id: 'karpathy-guidelines',
     name: 'karpathy-guidelines',
-    description: 'Karpathy 编码准则',
+    description: 'Karpathy 编码行为准则，避免常见 LLM 编码错误',
     tags: ['Coding', 'Best Practice'],
-    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/karpathy-guidelines',
+    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/skills/karpathy-guidelines',
+  },
+  {
+    id: 'khazix-writer',
+    name: 'khazix-writer',
+    description: '数字生命卡兹克的写作风格 Skill，公众号长文写作',
+    tags: ['Writing', 'Style'],
+    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/skills/khazix-writer',
+  },
+  {
+    id: 'memory-vault',
+    name: 'memory-vault',
+    description: '个人记忆仓库管理器，自动联通 GitHub 存储长期记忆',
+    tags: ['Memory', 'GitHub'],
+    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/skills/memory-vault',
+  },
+  {
+    id: 'superpower',
+    name: 'superpower',
+    description: '软件开发超能力工作流，涵盖设计探索、TDD、调试',
+    tags: ['Development', 'Workflow'],
+    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/skills/superpower',
+  },
+  {
+    id: 'ui-ux-pro-max',
+    name: 'ui-ux-pro-max',
+    description: 'UI/UX 设计智能助手，内置设计风格、配色、字体搭配库',
+    tags: ['Design', 'UI/UX'],
+    url: 'https://github.com/gracexygu/ai-toolkit/tree/main/skills/ui-ux-pro-max',
   },
 ]
 
@@ -121,8 +128,8 @@ export const projects: Project[] = [
   {
     id: 'ai-toolkit',
     title: 'ai-toolkit',
-    description: '6 个 Mira 自定义 Skills 开源集合，涵盖写作、设计、开发工作流',
-    highlight: '44 个文件',
+    description: '7 个 Mira 自定义 Skills 开源集合，涵盖写作、设计、开发工作流',
+    highlight: '开源',
     url: 'https://github.com/gracexygu/ai-toolkit',
   },
   {
@@ -281,7 +288,6 @@ export const contactLinks = [
   { label: 'Email', href: 'mailto:[EMAIL]', icon: 'email' },
   { label: 'GitHub', href: 'https://github.com/gracexygu', icon: 'github' },
   { label: '小红书', href: 'https://www.xiaohongshu.com/user/profile/5bc9f03eb39f6600012df592', icon: 'xhs' },
-  { label: 'LinkedIn', href: '[LINKEDIN_URL]', icon: 'linkedin' },
 ]
 
 // ==================== Social Links ====================
@@ -290,5 +296,4 @@ export const socialLinks = {
   email: '[EMAIL]',
   github: 'https://github.com/gracexygu',
   xhs: 'https://www.xiaohongshu.com/user/profile/5bc9f03eb39f6600012df592',
-  linkedin: '[LINKEDIN_URL]',
 }

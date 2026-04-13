@@ -3,7 +3,7 @@
  * 
  * 特点：
  * - 多核聚合球作为标题装饰
- * - 平铺展示（去掉 Tab 切换）
+ * - 平铺展示
  * - 技能列表 + 项目卡片
  */
 
@@ -17,7 +17,7 @@ export function Toolkit() {
   return (
     <section 
       id="toolkit" 
-      className="border-t border-border-l1 py-20 md:py-24 px-8 md:px-16"
+      className="py-20 md:py-24 px-8 md:px-16"
     >
       <div
         ref={ref}
@@ -34,7 +34,7 @@ export function Toolkit() {
         
         {/* Intro Text */}
         <p className="text-lg leading-relaxed text-text-secondary max-w-xl mb-12">
-          My AI toolkit — a collection of practical skills and vibe coding projects 
+          My AI toolkit — a collection of Mira custom Skills and vibe coding projects 
           that demonstrate how I approach product and engineering challenges.
         </p>
         
@@ -74,21 +74,6 @@ export function Toolkit() {
                     </span>
                   ))}
                 </div>
-                
-                {/* Arrow */}
-                <svg
-                  className="w-4 h-4 text-text-muted group-hover:text-klein group-hover:translate-x-1 transition-all"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
               </a>
             ))}
           </div>

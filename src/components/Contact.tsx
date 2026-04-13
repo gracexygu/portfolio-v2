@@ -5,6 +5,7 @@
  * - 深色背景（黑底）
  * - 无 Blob 装饰
  * - 香槟金 hover 效果
+ * - 三个联系方式平行排列
  */
 
 import { useScrollReveal } from '../hooks/useScrollReveal'
@@ -39,18 +40,17 @@ export function Contact() {
               let's connect.
             </p>
             
-            {/* Links */}
-            <div className="flex flex-col gap-4">
+            {/* Links - 平行排列，无箭头 */}
+            <div className="flex flex-wrap gap-6">
               {contactLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target={link.href.startsWith('mailto') ? undefined : '_blank'}
                   rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                  className="contact-link inline-flex items-center gap-2 text-white text-base w-fit transition-colors"
+                  className="contact-link text-white text-base transition-colors hover:text-accent"
                 >
                   {link.label}
-                  <span className="text-sm transition-transform hover:translate-x-0.5 hover:-translate-y-0.5">↗</span>
                 </a>
               ))}
             </div>

@@ -1,5 +1,5 @@
 /**
- * Taste Section - 3D Flip Gallery
+ * Taste Section - 3D Flip Gallery (Photography)
  * 
  * 特性：
  * - 点击翻转展示拍摄故事
@@ -107,14 +107,10 @@ export function Taste() {
       {/* Section Header with Morphing Blob */}
       <div className="flex items-center gap-6 mb-12">
         <MorphingBlob variant="taste" />
-        <div>
-          <h2 className="font-serif text-sm tracking-[6px] text-text-secondary uppercase">
-            Taste
-          </h2>
-          <p className="text-sm text-text-secondary mt-1">
-            点击图片翻转，探索背后的故事
-          </p>
-        </div>
+        <h2 className="section-title-text flex items-baseline gap-4">
+          <span className="section-title-num">03</span>
+          PHOTOGRAPHY
+        </h2>
       </div>
 
       {/* 3D Flip Grid */}
