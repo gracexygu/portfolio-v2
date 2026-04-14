@@ -99,7 +99,7 @@ export function Taste() {
     <section
       id="taste"
       ref={ref}
-      className={`py-24 px-8 md:px-16 bg-gradient-to-br from-gray-100 to-white transition-all duration-700 ${
+      className={`py-24 px-8 md:px-16 bg-[#F5F5F5] transition-all duration-700 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ perspective: '2000px' }}

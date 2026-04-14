@@ -18,8 +18,8 @@ export function KleinOrb() {
       <div 
         className="absolute animate-orb-breathe"
         style={{
-          width: '450px',
-          height: '450px',
+          width: '500px',
+          height: '500px',
           background: 'radial-gradient(circle at 30% 30%, #3D6AE8, #002FA7)',
           borderRadius: '50%',
           filter: 'blur(80px)',

@@ -69,8 +69,8 @@ export function RotatingRingNav() {
       <div 
         className="absolute z-50 pointer-events-auto"
         style={{
-          right: '-80px',
-          top: '50%',
+          right: '34%',
+          top: '46%',
           transform: 'translateY(-50%)',
           width: '600px',
           height: '600px',
@@ -80,10 +80,11 @@ export function RotatingRingNav() {
         <div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none z-[5]"
           style={{
-            width: '280px',
-            height: '280px',
-            background: 'radial-gradient(circle, #002FA7 0%, #1A47C9 35%, transparent 70%)',
-            filter: 'blur(60px)',
+            width: '400px',
+            height: '400px',
+            background: 'radial-gradient(circle, #3D6AE8 0%, #002FA7 38%, transparent 72%)',
+            filter: 'blur(90px)',
+            boxShadow: '0 0 120px rgba(61, 106, 232, 0.45)',
             animation: isExploding 
               ? 'fadeOut 0.6s ease-out forwards' 
               : 'navBreathe 4s ease-in-out infinite',
@@ -92,7 +93,10 @@ export function RotatingRingNav() {
         />
 
         {/* 悬停标题显示 */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+          style={{ transform: 'translateX(380px) translate(-50%, -50%)' }}
+        >
           <span 
             className="font-serif text-[22px] italic transition-opacity duration-300"
             style={{ 
@@ -105,50 +109,55 @@ export function RotatingRingNav() {
         </div>
 
         {/* 旋转文字环 */}
-        <div 
-          ref={ringRef}
+        <div
           className="absolute inset-0"
-          style={{
-            animation: isExploding 
-              ? 'ringFadeOut 0.6s ease-out forwards' 
-              : 'ringRotate 50s linear infinite',
-            willChange: 'transform, opacity, filter',
-          }}
-          onMouseEnter={() => ringRef.current && (ringRef.current.style.animationPlayState = 'paused')}
-          onMouseLeave={() => ringRef.current && (ringRef.current.style.animationPlayState = 'running')}
+          style={{ transform: 'translateX(380px)' }}
         >
-          <svg className="w-full h-full overflow-visible" viewBox="0 0 600 600">
-            <defs>
-              <path 
-                id="circlePath" 
-                d="M 300, 300 m -240, 0 a 240,240 0 1,1 480,0 a 240,240 0 1,1 -480,0" 
-                fill="none"
-              />
-            </defs>
-            
-            {navWords.map((word, index) => (
-              <text
-                key={index}
-                className="cursor-pointer transition-all duration-300"
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: '10px',
-                  fontWeight: 300,
-                  letterSpacing: '3px',
-                  fill: word.isNav 
-                    ? (hoveredSection === word.text ? '#002FA7' : 'rgba(26, 26, 26, 0.4)')
-                    : 'rgba(26, 26, 26, 0.4)',
-                }}
-                onMouseEnter={() => word.isNav && setHoveredSection(word.text)}
-                onMouseLeave={() => setHoveredSection(null)}
-                onClick={() => word.isNav && handleNavClick(word.id)}
-              >
-                <textPath href="#circlePath" startOffset={word.offset}>
-                  {word.text}
-                </textPath>
-              </text>
-            ))}
-          </svg>
+          <div 
+            ref={ringRef}
+            className="absolute inset-0"
+            style={{
+              animation: isExploding 
+                ? 'ringFadeOut 0.6s ease-out forwards' 
+                : 'ringRotate 50s linear infinite',
+              willChange: 'transform, opacity, filter',
+            }}
+            onMouseEnter={() => ringRef.current && (ringRef.current.style.animationPlayState = 'paused')}
+            onMouseLeave={() => ringRef.current && (ringRef.current.style.animationPlayState = 'running')}
+          >
+            <svg className="w-full h-full overflow-visible" viewBox="0 0 600 600">
+              <defs>
+                <path 
+                  id="circlePath" 
+                  d="M 300, 300 m -240, 0 a 240,240 0 1,1 480,0 a 240,240 0 1,1 -480,0" 
+                  fill="none"
+                />
+              </defs>
+              
+              {navWords.map((word, index) => (
+                <text
+                  key={index}
+                  className="cursor-pointer transition-all duration-300"
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: '10px',
+                    fontWeight: 300,
+                    letterSpacing: '3px',
+                    fill: word.isNav 
+                      ? (hoveredSection === word.text ? '#002FA7' : 'rgba(26, 26, 26, 0.4)')
+                      : 'rgba(26, 26, 26, 0.4)',
+                  }}
+                  onMouseEnter={() => word.isNav && setHoveredSection(word.text)}
+                  onMouseLeave={() => setHoveredSection(null)}
+                  onClick={() => word.isNav && handleNavClick(word.id)}
+                >
+                  <textPath href="#circlePath" startOffset={word.offset}>
+                    {word.text}
+                  </textPath>
+                </text>
+              ))}
+            </svg>
+          </div>
         </div>
       </div>
     </>

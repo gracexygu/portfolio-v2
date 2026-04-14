@@ -17,7 +17,7 @@ export function About() {
   return (
     <section 
       id="about" 
-      className="border-t border-border-l1 py-24 md:py-32 px-8 md:px-16"
+      className="py-24 md:py-32 px-8 md:px-16"
     >
       <div
         ref={ref}

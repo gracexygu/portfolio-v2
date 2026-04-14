@@ -91,7 +91,7 @@ export function Hero() {
   return (
     <section 
       id="hero"
-      className="min-h-screen flex items-center relative overflow-hidden"
+      className="min-h-screen flex items-center relative overflow-visible"
       style={{ padding: '0 8vw', background: '#F5F5F5' }}
     >
       {/* 左侧内容 */}

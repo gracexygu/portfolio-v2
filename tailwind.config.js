@@ -39,8 +39,8 @@ export default {
       },
       fontFamily: {
         script: ['Caveat', 'cursive'],
-        serif: ['Crimson Pro', 'Playfair Display', 'Georgia', 'serif'],
-        sans: ['Inter', 'Noto Sans SC', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'serif'],
+        sans: ['Noto Sans SC', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       letterSpacing: {

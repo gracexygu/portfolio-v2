@@ -9,9 +9,9 @@
 
 export function Footer() {
   return (
-    <footer className="bg-[#0A0A0A] py-10 px-8 md:px-16 text-center border-t border-[#222]">
+    <footer className="bg-[#F5F5F5] py-10 px-8 md:px-16 text-center border-t border-border-l2">
       {/* Signature - 手写字体 */}
-      <p className="font-script text-4xl md:text-5xl text-klein-light mb-3">
+      <p className="font-script text-4xl md:text-5xl text-klein mb-3">
         Grace
       </p>
       

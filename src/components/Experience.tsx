@@ -17,7 +17,7 @@ export function Experience() {
   return (
     <section 
       id="experience" 
-      className="border-t border-border-l1 py-16 md:py-20 px-8 md:px-16"
+      className="py-16 md:py-20 px-8 md:px-16"
     >
       <div
         ref={ref}
