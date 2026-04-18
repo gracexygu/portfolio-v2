@@ -41,13 +41,13 @@ export const Photography: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const book = bookRef.current;
-    const bw = bwRef.current;
-    const prevBtn = prevRef.current;
-    const nextBtn = nextRef.current;
-    const dotsEl = dotsRef.current;
-    const pnEl = pnRef.current;
-    if (!book || !bw || !prevBtn || !nextBtn || !dotsEl || !pnEl) return;
+    if (!bookRef.current || !bwRef.current || !prevRef.current || !nextRef.current || !dotsRef.current || !pnRef.current) return;
+    const book = bookRef.current!;
+    const bw = bwRef.current!;
+    const prevBtn = prevRef.current!;
+    const nextBtn = nextRef.current!;
+    const dotsEl = dotsRef.current!;
+    const pnEl = pnRef.current!;
 
     const pages = gsap.utils.toArray<HTMLElement>('.flip-page');
     const N = pages.length;

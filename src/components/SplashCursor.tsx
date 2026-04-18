@@ -48,8 +48,8 @@ function SplashCursor({
   const animationFrameId = useRef<number | null>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvasRef.current) return;
+    const canvas = canvasRef.current!;
 
     let isActive = true;
 
