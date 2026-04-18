@@ -1,13 +1,13 @@
 /**
  * App - 主入口
- * 
+ *
  * 变更：
  * - 移除顶部固定导航（Hero 底部已有导航）
- * - 保留滚动监听（用于未来扩展）
+ * - 新增 SplashCursor 流体光标效果（Klein Blue 配色）
  */
 
 import { useState, useEffect } from 'react'
-import { Hero, About, Experience, Photography, Xiaohongshu, Toolkit, Contact, Footer } from './components'
+import { Hero, About, Experience, Photography, Xiaohongshu, Toolkit, Contact, Footer, SplashCursor } from './components'
 import { navItems } from './data'
 
 function App() {
@@ -33,12 +33,20 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // activeSection 可用于未来扩展（如浮动进度指示器）
-  // _activeSection available for future use
-
   return (
     <div className="relative">
-      {/* 移除顶部导航 - Hero 底部已有导航 */}
+      {/* Klein Blue fluid cursor — transparent overlay, pointer-events:none */}
+      <SplashCursor
+        RAINBOW_MODE={false}
+        COLOR="#002FA7"
+        BACK_COLOR={{ r: 0, g: 0.02, b: 0.06 }}
+        DENSITY_DISSIPATION={3.5}
+        VELOCITY_DISSIPATION={2}
+        SPLAT_RADIUS={0.2}
+        SPLAT_FORCE={6000}
+        CURL={3}
+      />
+
       <main>
         <Hero />
         <About />
