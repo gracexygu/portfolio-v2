@@ -40,10 +40,10 @@ function App() {
         RAINBOW_MODE={false}
         COLOR="#002FA7"
         BACK_COLOR={{ r: 0, g: 0.02, b: 0.06 }}
-        DENSITY_DISSIPATION={3.5}
+        DENSITY_DISSIPATION={4.5}
         VELOCITY_DISSIPATION={2}
-        SPLAT_RADIUS={0.2}
-        SPLAT_FORCE={6000}
+        SPLAT_RADIUS={0.12}
+        SPLAT_FORCE={3000}
         CURL={3}
       />
 
