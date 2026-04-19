@@ -6,18 +6,18 @@ import gsap from 'gsap';
 /*  GSAP 3D page-flip with CSS transforms                            */
 /* ------------------------------------------------------------------ */
 
-// Page content data
+// Page content data — using real photos from public/
 const PHOTOS = {
-  p01L: { src: '/photo1.jpg', cap: '01 / Still Life', desc: 'Light falls quietly — a moment held in the palm of a frame.' },
-  p01R: { src: '/photo2.jpg', cap: '01 / Still Life · II', desc: 'The world unfolds in layers, each one whispering a different story.' },
-  p02L: { src: '/photo3.jpg', cap: '02 / Wanderlust', desc: 'Somewhere between here and there — the journey is the destination.' },
-  p02R: { src: '/photo4.jpg', cap: '02 / Wanderlust · II', desc: 'Into the mist — landscapes reveal their quiet, fragile beauty.' },
-  p03:  { src: '/photo5.jpg' },
+  p01L: { src: '/photo2.jpg', cap: '01 / Still Life', desc: 'Light falls quietly — a moment held in the palm of a frame.' },
+  p01R: { src: '/photo3.jpg', cap: '01 / Still Life · II', desc: 'The world unfolds in layers, each one whispering a different story.' },
+  p02L: { src: '/photo4.jpg', cap: '02 / Wanderlust', desc: 'Somewhere between here and there — the journey is the destination.' },
+  p02R: { src: '/photo5.jpg', cap: '02 / Wanderlust · II', desc: 'Into the mist — landscapes reveal their quiet, fragile beauty.' },
+  p03:  { src: '/photo2.jpg' },
   p04:  { src: '/photo3.jpg', cap: '04 / Golden Hour', desc: 'When light touches everything with gold, even the ordinary becomes sacred.' },
   p05:  { src: '/photo4.jpg', cap: '05 / Deep Blue', desc: 'The horizon stretches endlessly, whispering stories of distant places.' },
-  cs1:  { src: '/photo2.jpg' },
+  cs1:  { src: '/photo3.jpg' },
   cs2:  { src: '/photo5.jpg' },
-  cs3:  { src: '/photo3.jpg' },
+  cs3:  { src: '/photo2.jpg' },
   cs4:  { src: '/photo1.jpg' },
 };
 
@@ -186,7 +186,7 @@ export const Photography: React.FC = () => {
             <div className="flip-page">
               <div className="flip-face flip-front flip-cover-f">
                 <div className="flip-meta" style={{ color: 'rgba(255,255,255,.5)' }}>Portfolio / 2024</div>
-                <h1 className="flip-title" style={{ color: '#fff' }}>Grace Gu's<br />Visual<br />Diary.</h1>
+                <h1 className="flip-title" style={{ color: '#fff' }}>Grace's<br />Visual<br />Diary.</h1>
               </div>
               <div className="flip-face flip-back flip-endpaper" />
             </div>
@@ -240,7 +240,7 @@ export const Photography: React.FC = () => {
               </div>
               <div className="flip-face flip-back flip-verse-pg">
                 <p className="flip-verse">"In the right light,<br />at the right time,<br />everything is extraordinary."</p>
-                <p className="flip-verse-attr">— Aaron Rose</p>
+                <p className="flip-verse-attr">— Grace</p>
               </div>
             </div>
 
@@ -253,23 +253,23 @@ export const Photography: React.FC = () => {
               </div>
               <div className="flip-face flip-back" style={{ padding: 36 }}>
                 <div className="flip-meta">04 / Golden Hour</div>
-                <h2 className="flip-title">Bali<br />Sunset</h2>
-                <p className="flip-desc">Uluwatu cliffs at dusk. The temple sits on the edge of the world, and for a few minutes, time dissolves into warm amber.</p>
+                <h2 className="flip-title">Chasing<br />Light</h2>
+                <p className="flip-desc">When light touches everything with gold, even the ordinary becomes sacred. These are the moments I live for — fleeting, warm, impossibly beautiful.</p>
               </div>
             </div>
 
             {/* P7: CS Grid / CS Diagonal */}
             <div className="flip-page">
               <div className="flip-face flip-front flip-cs-grid">
-                <div className="flip-cs-hd">Contact Sheet — Portraits</div>
+                <div className="flip-cs-hd">Contact Sheet — Selected</div>
                 <div className="flip-cg flip-cg-1x2">
                   <div className="flip-ci">
                     <div className="flip-ct" style={{ backgroundImage: `url('${PHOTOS.cs1.src}')` }} />
-                    <div className="flip-cl"><span className="flip-cn">05</span> · The Briefing · Studio 2024</div>
+                    <div className="flip-cl"><span className="flip-cn">05</span> · Golden Light · 2024</div>
                   </div>
                   <div className="flip-ci">
                     <div className="flip-ct" style={{ backgroundImage: `url('${PHOTOS.cs2.src}')` }} />
-                    <div className="flip-cl"><span className="flip-cn">10</span> · Quiet Portrait · Jakarta 2024</div>
+                    <div className="flip-cl"><span className="flip-cn">06</span> · Blue Hour · 2024</div>
                   </div>
                 </div>
               </div>
@@ -277,9 +277,9 @@ export const Photography: React.FC = () => {
                 <div className="flip-cs-hd">Contact Sheet — Wanderlust</div>
                 <div className="flip-cs-area">
                   <div className="flip-cs-card" style={{ top: '2%', left: '2%', transform: 'rotate(-3deg)', zIndex: 2, backgroundImage: `url('${PHOTOS.cs3.src}')` }} />
-                  <div className="flip-cs-lbl" style={{ top: '4%', right: '4%' }}><span className="flip-cn">06</span> · Starry Summit<br />Dolomites 2024</div>
+                  <div className="flip-cs-lbl" style={{ top: '4%', right: '4%' }}><span className="flip-cn">07</span> · Quiet Horizon<br />2024</div>
                   <div className="flip-cs-card" style={{ bottom: '2%', right: '2%', transform: 'rotate(2deg)', zIndex: 1, backgroundImage: `url('${PHOTOS.cs4.src}')` }} />
-                  <div className="flip-cs-lbl" style={{ bottom: '4%', left: '4%' }}><span className="flip-cn">07</span> · Red Gate Path<br />Kyoto 2023</div>
+                  <div className="flip-cs-lbl" style={{ bottom: '4%', left: '4%' }}><span className="flip-cn">08</span> · Still Frame<br />2024</div>
                 </div>
               </div>
             </div>
@@ -293,8 +293,8 @@ export const Photography: React.FC = () => {
               </div>
               <div className="flip-face flip-back" style={{ padding: 36 }}>
                 <div className="flip-meta">05 / Deep Blue</div>
-                <h2 className="flip-title">Santorini<br />Dusk</h2>
-                <p className="flip-desc">The Aegean stretches endlessly, whispering stories of ancient voyages. Every journey ends where it begins — with a single glance.</p>
+                <h2 className="flip-title">The Far<br />Shore</h2>
+                <p className="flip-desc">The horizon stretches endlessly, whispering stories of distant places. Every journey ends where it begins — with a single glance.</p>
               </div>
             </div>
 
@@ -303,7 +303,7 @@ export const Photography: React.FC = () => {
               <div className="flip-face flip-front" style={{ padding: 36, alignItems: 'center', textAlign: 'center' }}>
                 <div className="flip-meta">Epilogue</div>
                 <h2 className="flip-title">There's always<br />more to <span style={{ color: '#002FA7' }}>see.</span></h2>
-                <p className="flip-desc" style={{ marginTop: 6 }}>2024 Collection · 10 Selected Works</p>
+                <p className="flip-desc" style={{ marginTop: 6 }}>2024 Collection · Selected Works</p>
                 <a href="#contact" className="flip-cta">View Full Gallery →</a>
               </div>
               <div className="flip-face flip-back flip-breath-pg">
@@ -316,7 +316,7 @@ export const Photography: React.FC = () => {
             <div className="flip-page">
               <div className="flip-face flip-front flip-endpaper" />
               <div className="flip-face flip-cover-b">
-                <div className="flip-meta" style={{ color: 'rgba(255,255,255,.5)' }}>Grace Gu</div>
+                <div className="flip-meta" style={{ color: 'rgba(255,255,255,.5)' }}>Grace</div>
                 <h2 className="flip-title" style={{ color: '#fff', fontSize: 'clamp(16px,2.5vw,22px)' }}>Visual Diary<br />2024</h2>
               </div>
             </div>
