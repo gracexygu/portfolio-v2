@@ -8,7 +8,6 @@ import gsap from 'gsap';
 
 // Page content data
 const PHOTOS = {
-const PHOTOS = {
   p01L: { src: '/photo1.jpg', cap: '01 / Still Life', desc: 'Light falls quietly — a moment held in the palm of a frame.' },
   p01R: { src: '/photo2.jpg', cap: '01 / Still Life · II', desc: 'The world unfolds in layers, each one whispering a different story.' },
   p02L: { src: '/photo3.jpg', cap: '02 / Wanderlust', desc: 'Somewhere between here and there — the journey is the destination.' },
