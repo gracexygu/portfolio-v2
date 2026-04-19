@@ -8,17 +8,18 @@ import gsap from 'gsap';
 
 // Page content data
 const PHOTOS = {
-  p01L: { src: 'https://images.unsplash.com/photo-1506744626753-143683980b43?q=80&w=800&auto=format&fit=crop', cap: '01 / Urban Silence', desc: 'Tokyo at 4 AM — the city holds its breath before the dawn breaks.' },
-  p01R: { src: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=800&auto=format&fit=crop', cap: '01 / Urban Silence · II', desc: 'Shibuya crossing — a million footsteps, each with its own destination.' },
-  p02L: { src: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=800&auto=format&fit=crop', cap: '02 / Alpine Raw', desc: 'The Monochrome Peak — raw geometry at 3,800m altitude.' },
-  p02R: { src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop', cap: '02 / Alpine Raw · II', desc: 'Into the mist — the mountain reveals an ethereal, fragile face.' },
-  p03:  { src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop' },
-  p04:  { src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=800&auto=format&fit=crop', cap: '04 / Golden Hour', desc: 'Bali sunset — when light touches everything with gold, even the ordinary becomes sacred.' },
-  p05:  { src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop', cap: '05 / Deep Blue', desc: 'Santorini dusk — white walls catching the last breath of sunlight.' },
-  cs1:  { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop' },
-  cs2:  { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop' },
-  cs3:  { src: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop' },
-  cs4:  { src: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=600&auto=format&fit=crop' },
+const PHOTOS = {
+  p01L: { src: '/photo1.jpg', cap: '01 / Still Life', desc: 'Light falls quietly — a moment held in the palm of a frame.' },
+  p01R: { src: '/photo2.jpg', cap: '01 / Still Life · II', desc: 'The world unfolds in layers, each one whispering a different story.' },
+  p02L: { src: '/photo3.jpg', cap: '02 / Wanderlust', desc: 'Somewhere between here and there — the journey is the destination.' },
+  p02R: { src: '/photo4.jpg', cap: '02 / Wanderlust · II', desc: 'Into the mist — landscapes reveal their quiet, fragile beauty.' },
+  p03:  { src: '/photo5.jpg' },
+  p04:  { src: '/photo3.jpg', cap: '04 / Golden Hour', desc: 'When light touches everything with gold, even the ordinary becomes sacred.' },
+  p05:  { src: '/photo4.jpg', cap: '05 / Deep Blue', desc: 'The horizon stretches endlessly, whispering stories of distant places.' },
+  cs1:  { src: '/photo2.jpg' },
+  cs2:  { src: '/photo5.jpg' },
+  cs3:  { src: '/photo3.jpg' },
+  cs4:  { src: '/photo1.jpg' },
 };
 
 export const Photography: React.FC = () => {
