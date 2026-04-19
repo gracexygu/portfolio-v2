@@ -1,0 +1,37 @@
+/* Chronicle Dial */
+.dial-wrapper{position:relative;overflow:hidden;padding-bottom:40px}
+.dial-content-area{min-height:360px;margin-bottom:48px}
+.dial-content-inner{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start}
+.dial-left-col{display:flex;flex-direction:column;gap:16px}
+.dial-image-wrap{position:relative;width:280px;height:200px;border-radius:6px;overflow:hidden}
+.dial-image{width:100%;height:100%;object-fit:cover}
+.dial-image-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,47,167,.08) 100%);pointer-events:none}
+.dial-meta{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(26,26,26,.5)}
+.dial-icon{font-size:18px}
+.dial-location{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.dial-right-col{padding-top:8px}
+.dial-era-label{display:flex;align-items:center;gap:12px;margin-bottom:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#002FA7}
+.dial-era-line{width:40px;height:1px;background:#002FA7}
+.dial-title{font-family:'Crimson Pro','Georgia',serif;font-size:clamp(28px,4vw,40px);font-weight:400;line-height:1.15;letter-spacing:-.5px;margin-bottom:8px;color:#1a1a1a}
+.dial-subtitle{font-size:15px;color:#002FA7;margin-bottom:20px;font-weight:500}
+.dial-description{font-size:15px;line-height:1.9;color:rgba(26,26,26,.65);max-width:480px}
+.dial-bottom{position:relative;display:flex;flex-direction:column;align-items:center;gap:24px}
+.dial-arc-container{position:relative;width:100%;height:120px;overflow:hidden}
+.dial-arc{position:absolute;bottom:0;left:50%;width:160vw;height:160vw;margin-left:-80vw;border-radius:50%;border:1px solid rgba(0,0,0,.06);transform-origin:center center}
+.dial-marker-root{position:absolute;bottom:100%;left:50%;transform-origin:bottom center;height:80px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.dial-marker-inner{display:flex;flex-direction:column;align-items:center;gap:6px}
+.dial-marker-year{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:1px;transition:all .5s cubic-bezier(.16,1,.3,1)}
+.dial-marker-bar{width:2px;border-radius:1px;transition:all .5s cubic-bezier(.16,1,.3,1)}
+.dial-click-area{position:absolute;bottom:100%;left:50%;transform-origin:bottom center;width:60px;height:90px;cursor:pointer;background:transparent;border:none;padding:0}
+.dial-pointer-wrap{position:relative;display:flex;flex-direction:column;align-items:center;margin-top:-24px}
+.dial-pointer-needle{width:2px;height:32px;background:#002FA7;border-radius:1px}
+.dial-pointer-dot{width:8px;height:8px;border-radius:50%;background:#002FA7;margin-top:4px}
+.dial-nav{display:flex;align-items:center;gap:32px}
+.dial-nav-btn{display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;color:rgba(26,26,26,.4);transition:color .3s;padding:8px}
+.dial-nav-btn:hover{color:#002FA7}
+.dial-nav-btn:disabled{opacity:.25;cursor:not-allowed}
+.dial-nav-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.text-klein{color:#002FA7}
+.bg-klein{background-color:#002FA7}
+@media(max-width:900px){.dial-content-inner{grid-template-columns:1fr;gap:28px}.dial-image-wrap{width:100%;height:220px}.dial-description{max-width:100%}}
+@media(max-width:640px){.dial-content-area{min-height:280px}.dial-content-inner{gap:20px}.dial-image-wrap{height:180px}.dial-title{font-size:24px}.dial-arc-container{height:90px}.dial-nav{gap:20px}.dial-marker-year{font-size:11px}}
