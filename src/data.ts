@@ -297,3 +297,68 @@ export const socialLinks = {
   github: 'https://github.com/gracexygu',
   xhs: 'https://www.xiaohongshu.com/user/profile/5bc9f03eb39f6600012df592',
 }
+
+/** Chronicle Dial 拨盘数据 */
+export interface DialExperience {
+  year: number
+  title: string
+  subtitle: string
+  description: string
+  location: string
+  type: 'work' | 'education' | 'achievement'
+  image: string
+}
+
+/* ── 岁月拨盘 Chronicle Dial 数据 ── */
+export const dialExperiences: DialExperience[] = [
+  {
+    year: 2020,
+    title: '兰州大学',
+    subtitle: '本科 · 新闻与传播学院',
+    description:
+      '在西北旷野的风沙里，我第一次学会用镜头和文字捕捉世界。那些在黄河边拍纪录片的深夜，让我相信"讲故事"是一种超能力。',
+    location: '甘肃 · 兰州',
+    type: 'education',
+    image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=400&fit=crop',
+  },
+  {
+    year: 2022,
+    title: '同济大学',
+    subtitle: '硕士 · 设计创意学院',
+    description:
+      '从传播跨到设计，像是一场蓄谋已久的冒险。在同济的工作坊和深夜Studio里，我把"用户思维"刻进了骨子里，也找到了产品设计的语感。',
+    location: '上海',
+    type: 'education',
+    image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=400&fit=crop',
+  },
+  {
+    year: 2024,
+    title: '小红书',
+    subtitle: '产品经理实习 · 社区增长',
+    description:
+      '第一次把课堂里的方法论扔进真实的战场。负责社区内容分发策略优化，用数据驱动实验迭代，终于理解了"增长"不是黑魔法，而是无数个0.1%的叠加。',
+    location: '上海',
+    type: 'work',
+    image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop',
+  },
+  {
+    year: 2025,
+    title: 'TikTok',
+    subtitle: '产品经理 · 电商',
+    description:
+      '加入全球化最前线的战场，在直播电商的高速列车上学会了"边开枪边换轮子"。跨时区协作、从0到1搭建商家工具，每一天都在被推着进化。',
+    location: '新加坡',
+    type: 'work',
+    image: 'https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?w=600&h=400&fit=crop',
+  },
+  {
+    year: 2026,
+    title: 'AI PM 转型',
+    subtitle: '探索 AI-Native 产品设计',
+    description:
+      '当大模型重新定义交互范式，我决定All-in这个时代最大的变量。从Prompt Engineering到Agent架构，正在用产品经理的直觉，寻找AI与人之间最舒服的握手方式。',
+    location: '地球 Online',
+    type: 'achievement',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
+  },
+]
